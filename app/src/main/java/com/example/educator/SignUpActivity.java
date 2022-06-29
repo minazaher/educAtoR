@@ -2,6 +2,7 @@ package com.example.educator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,9 +33,11 @@ public class SignUpActivity extends AppCompatActivity {
                 }
                 else {
                     if (et_pass.getText().toString().equals(et_passConfirm.getText().toString())){
-                            Student student = new Student(et_name.getText().toString(),et_email.getText().toString(),et_pass.getText().toString(), et_img.getText().toString());
+                        Student student = new Student(et_name.getText().toString(),et_email.getText().toString(),et_pass.getText().toString(), et_img.getText().toString());
                         Toast.makeText(SignUpActivity.this, "Account Created Successfully ", Toast.LENGTH_SHORT).show();
-                            ApplicationClass.students.add(student);
+                        ApplicationClass.students.add(student);
+                        Intent intent = new Intent(SignUpActivity.this, loginActivity.class);
+                        startActivity(intent);
                     }else{
                         Toast.makeText(SignUpActivity.this, "Password Not Correct", Toast.LENGTH_SHORT).show();
                     }

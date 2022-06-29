@@ -28,7 +28,7 @@ public class loginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 for (Student s:ApplicationClass.students) {
-                    if (et_email_log.getText().toString().equals(s.getEmail()) || et_pass_log.getText().toString().equals(s.getPassword()))
+                    if (et_email_log.getText().toString().equals(s.getEmail()) || et_pass_log.getText().toString().trim().equals(s.getPassword()))
                     {
                         String name = s.getName();
                         String URL = s.getImgUrl();
