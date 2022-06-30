@@ -35,7 +35,7 @@ public class Profile extends AppCompatActivity {
         chem_AR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://aboelmagd01.github.io/educator-v1/"));
+                Intent intent = new Intent(Profile.this, com.example.educator.chem_AR.class);
                 startActivity(intent);
             }
         });

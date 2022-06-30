@@ -2,9 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.educator">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".ApplicationClass"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,8 +15,13 @@
         android:roundIcon="@mipmap/educator"
         android:supportsRtl="true"
         android:theme="@style/Theme.EducAtoR"
-        android:name=".ApplicationClass"
         tools:targetApi="31">
+        <activity
+            android:name=".RoleSelector"
+            android:exported="false" />
+        <activity
+            android:name=".chem_AR"
+            android:exported="false" />
         <activity
             android:name=".Profile"
             android:exported="false" />
