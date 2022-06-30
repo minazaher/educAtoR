@@ -37,7 +37,6 @@ public class SignUpActivity extends AppCompatActivity {
                         Toast.makeText(SignUpActivity.this, "Account Created Successfully ", Toast.LENGTH_SHORT).show();
                         ApplicationClass.students.add(student);
                         Intent intent = new Intent(SignUpActivity.this, loginActivity.class);
-                        startActivity(intent);
                     }else{
                         Toast.makeText(SignUpActivity.this, "Password Not Correct", Toast.LENGTH_SHORT).show();
                     }

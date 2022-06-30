@@ -14,4 +14,40 @@ public class ApplicationClass extends Application {
         Student mina = new Student("Mina", "menazaher115@gmail.com", "01228043127", "https://scontent.fcai20-4.fna.fbcdn.net/v/t39.30808-6/274154586_489410356134153_5054988907904159274_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_ohc=zKFJNqauxHsAX-VPwgT&_nc_ht=scontent.fcai20-4.fna&oh=00_AT80tuEa1cbgRTaf2nL-QEgW275J0AiyuWZxiYu6jvz3wQ&oe=62C03CA4");
         students.add(mina);
     }
+
+    public static Student findStudentByEmail(String email) {
+        Student student = new Student();
+        for (Student s : students) {
+            if (email.equals(s.getEmail())) {
+                student = s;
+                break;
+            }
+        }
+        return student;
+    }
+
+    public static Student findStudentByPass(String password) {
+        Student student = new Student();
+        for (Student s : students) {
+            if (password.equals(s.getEmail())) {
+                student = s;
+                break;
+            }
+        }
+        return student;
+    }
+
+
+    public static boolean verify(String email, String password) {
+        boolean Verified = false;
+        for (Student s : students) {
+            if (s.getEmail().equals(email)) {
+                Student student = findStudentByEmail(email);
+                if (student.getPassword().toString().equals(password)) {
+                    Verified = true;
+                }
+            }
+        }
+        return Verified;
+    }
 }

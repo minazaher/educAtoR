@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,7 +18,7 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
@@ -42,6 +42,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:src="@drawable/avatar2"
+                android:foregroundGravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -76,16 +77,21 @@
         android:textStyle="bold"
         android:textSize="26sp"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9">
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:cardBackgroundColor="@color/white">
+            app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -99,11 +105,11 @@
                     android:id="@+id/textView15"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="AR Camera"
                     android:layout_marginStart="32dp"
+                    android:padding="6dp"
+                    android:text="AR Camera"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:padding="6dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 
@@ -113,6 +119,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/chem_AR"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -120,12 +127,24 @@
                         android:background="@drawable/bg_btn"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/chem_img"
-                            android:layout_width="match_parent"
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            app:srcCompat="@drawable/btn1" />
+                            android:layout_gravity="center"
+                            android:background="@color/white"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="10dp">
+
+                            <ImageView
+                                android:id="@+id/chem_img"
+                                android:layout_width="88dp"
+                                android:layout_height="84dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="5dp"
+                                android:background="@color/white"
+                                app:srcCompat="@drawable/chem" />
+                        </androidx.cardview.widget.CardView>
 
                         <TextView
                             android:id="@+id/tv_chem"
@@ -135,12 +154,13 @@
                             android:text="Chemistry"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginTop="7dp" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/bio_AR"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -148,12 +168,24 @@
                         android:background="@drawable/bg_btn"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/img_biology"
-                            android:layout_width="match_parent"
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            app:srcCompat="@drawable/btn1" />
+                            android:background="@color/white"
+                            android:layout_gravity="center"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="10dp">
+
+                            <ImageView
+                                android:id="@+id/bio_img"
+                                android:background="@color/white"
+                                android:layout_width="88dp"
+                                android:layout_height="84dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="5dp"
+                                app:srcCompat="@drawable/bio" />
+                        </androidx.cardview.widget.CardView>
 
                         <TextView
                             android:id="@+id/tv_bio"
@@ -161,6 +193,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
                             android:text="Biology"
+                            android:layout_marginTop="7dp"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
@@ -175,12 +208,24 @@
                         android:background="@drawable/bg_btn"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/img_geology"
-                            android:layout_width="match_parent"
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            app:srcCompat="@drawable/btn1" />
+                            android:background="@color/white"
+                            android:layout_gravity="center"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="10dp">
+
+                            <ImageView
+                                android:id="@+id/geo_img"
+                                android:background="@color/white"
+                                android:layout_width="88dp"
+                                android:layout_height="84dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                app:srcCompat="@drawable/geo" />
+                        </androidx.cardview.widget.CardView>
 
                         <TextView
                             android:id="@+id/tv_geo"
@@ -190,8 +235,8 @@
                             android:text="Geology"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginTop="7dp" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -199,9 +244,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
                     android:padding="6dp"
                     android:text="Others"
-                    android:layout_marginStart="32dp"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -218,12 +263,25 @@
                         android:background="@drawable/bg_btn"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/img_quiz"
-                            android:layout_width="match_parent"
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            app:srcCompat="@drawable/btn1" />
+                            android:background="@color/white"
+                            android:layout_gravity="center"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="10dp">
+
+                            <ImageView
+                                android:id="@+id/bio_img"
+                                android:background="@color/white"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="5dp"
+                                app:srcCompat="@drawable/bio" />
+                        </androidx.cardview.widget.CardView>
+
 
                         <TextView
                             android:id="@+id/tv_quiz"
@@ -233,7 +291,7 @@
                             android:text="Quizzes"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-
+                            android:layout_marginTop="7dp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -246,12 +304,25 @@
                         android:background="@drawable/bg_btn"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/img_periodicTable"
-                            android:layout_width="match_parent"
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            app:srcCompat="@drawable/btn1" />
+                            android:background="@color/white"
+                            android:layout_gravity="center"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="10dp">
+
+                            <ImageView
+                                android:id="@+id/bio_img"
+                                android:background="@color/white"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="5dp"
+                                app:srcCompat="@drawable/bio" />
+                        </androidx.cardview.widget.CardView>
+
 
                         <TextView
                             android:id="@+id/textView12"
@@ -261,7 +332,7 @@
                             android:text="PeriodicTable"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-
+                            android:layout_marginTop="7dp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -274,12 +345,25 @@
                         android:background="@drawable/bg_btn"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/img_about"
-                            android:layout_width="match_parent"
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            app:srcCompat="@drawable/btn1" />
+                            android:background="@color/white"
+                            android:layout_gravity="center"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="10dp">
+
+                            <ImageView
+                                android:id="@+id/img_about"
+                                android:background="@color/white"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="5dp"
+                                app:srcCompat="@drawable/bio" />
+                        </androidx.cardview.widget.CardView>
+
 
                         <TextView
                             android:id="@+id/tv_about"
@@ -289,6 +373,7 @@
                             android:text="About Us"
                             android:textAlignment="center"
                             android:textColor="@color/black"
+                            android:layout_marginTop="7dp"
                             android:textStyle="bold" />
 
                     </LinearLayout>

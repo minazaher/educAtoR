@@ -8,12 +8,16 @@ public class Student {
     private String Password;
     private String ImgUrl;
 
+    public Student() {
+    }
+
     public Student(String name, String email, String password, String imgUrl) {
         Name = name;
         Email = email;
         Password = password;
         ImgUrl = imgUrl;
     }
+
 
     public String getName() {
         return Name;
