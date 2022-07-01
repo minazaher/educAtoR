@@ -6,9 +6,11 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 
 public class RoleSelector extends AppCompatActivity {
-    CardView teacher, student;
+    LinearLayout teacher, student;
+    int Role;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,8 @@ public class RoleSelector extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(RoleSelector.this, loginActivity.class);
+                Role = 1;
+                intent.putExtra("Role", Role);
                 startActivity(intent);
             }
         });
@@ -30,6 +34,8 @@ public class RoleSelector extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(RoleSelector.this, loginActivity.class);
+                Role = 0;
+                intent.putExtra("Role", Role);
                 startActivity(intent);
             }
         });

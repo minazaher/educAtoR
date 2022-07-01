@@ -3,6 +3,7 @@ package com.example.educator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
@@ -18,6 +19,9 @@ public class chem_AR extends AppCompatActivity {
         webview = findViewById(R.id.web_view);
         webview.setWebViewClient(new WebViewClient());
         webview.loadUrl("https://aboelmagd01.github.io/educator-v1/");
+        WebSettings webSettings = webview.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
     }
 
     @Override

@@ -31,7 +31,6 @@ public class Profile extends AppCompatActivity {
 
         Glide.with(this).asBitmap().load(URL).into(img);
 
-
         chem_AR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

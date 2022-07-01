@@ -12,7 +12,8 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:layout_margin="30dp"
         android:background="@color/white"
         android:text="Select Your Role Please"
@@ -24,26 +25,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_margin="10dp"
         android:background="@color/white"
         android:orientation="vertical"
-        android:paddingLeft="30dp">
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_weight="2">
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            app:cardBackgroundColor="#6f4c9e"
+            app:cardBackgroundColor="#6968AC"
             app:cardCornerRadius="10dp"
             app:cardElevation="15dp"
-            android:layout_gravity="center_vertical"
-            android:id="@+id/teacher_card">
+            android:layout_gravity="center"
+            android:paddingTop="20dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="20dp"
-                app:cardBackgroundColor="#6f4c9e">
+                android:id="@+id/teacher_card"
+                app:cardBackgroundColor="#6968AC">
 
                 <ImageView
                     android:layout_width="150dp"
@@ -67,17 +72,19 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="#1330a8"
+            app:cardBackgroundColor="#FFBCD1"
             app:cardCornerRadius="10dp"
             app:cardElevation="15dp"
-            android:id="@+id/student_card">
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="20dp"
-                app:cardBackgroundColor="#1330a8">
+                app:cardBackgroundColor="#1330a8"
+                android:id="@+id/student_card">
 
                 <ImageView
                     android:layout_width="150dp"
