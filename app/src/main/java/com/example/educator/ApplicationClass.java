@@ -14,8 +14,15 @@ public class ApplicationClass extends Application {
         Teacher Amr = new Teacher("Amr", "1212", "gg@ez.com", "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/3baed5b730c0b82c272bab1cdcff7c90~c5_720x720.jpeg?x-expires=1656752400&x-signature=Ua9fW8MN3BqtzdiRiKYYa1ngUYo%3D");
         teachers.add(Amr);
 
-        Student mina = new Student("Mina", "01228043127", "menazaher115@gmail.com", "https://scontent.fcai20-4.fna.fbcdn.net/v/t39.30808-6/274154586_489410356134153_5054988907904159274_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_ohc=zKFJNqauxHsAX-VPwgT&_nc_ht=scontent.fcai20-4.fna&oh=00_AT80tuEa1cbgRTaf2nL-QEgW275J0AiyuWZxiYu6jvz3wQ&oe=62C03CA4");
-        students.add(mina);
+
+        Student mina1 = new Student("Mina", "01228043127", "menazaher115@gmail.com", "https://scontent.fcai20-4.fna.fbcdn.net/v/t39.30808-6/274154586_489410356134153_5054988907904159274_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_ohc=zKFJNqauxHsAX-VPwgT&_nc_ht=scontent.fcai20-4.fna&oh=00_AT80tuEa1cbgRTaf2nL-QEgW275J0AiyuWZxiYu6jvz3wQ&oe=62C03CA4");
+        Student mina2 = new Student("Mina", "01228043127", "menazaher115@gmail.com", "https://scontent.fcai20-4.fna.fbcdn.net/v/t39.30808-6/274154586_489410356134153_5054988907904159274_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_ohc=zKFJNqauxHsAX-VPwgT&_nc_ht=scontent.fcai20-4.fna&oh=00_AT80tuEa1cbgRTaf2nL-QEgW275J0AiyuWZxiYu6jvz3wQ&oe=62C03CA4");
+        Student mina3 = new Student("Mina", "01228043127", "menazaher115@gmail.com", "https://scontent.fcai20-4.fna.fbcdn.net/v/t39.30808-6/274154586_489410356134153_5054988907904159274_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_ohc=zKFJNqauxHsAX-VPwgT&_nc_ht=scontent.fcai20-4.fna&oh=00_AT80tuEa1cbgRTaf2nL-QEgW275J0AiyuWZxiYu6jvz3wQ&oe=62C03CA4");
+        Student mina4 = new Student("Mina", "01228043127", "menazaher115@gmail.com", "https://scontent.fcai20-4.fna.fbcdn.net/v/t39.30808-6/274154586_489410356134153_5054988907904159274_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_ohc=zKFJNqauxHsAX-VPwgT&_nc_ht=scontent.fcai20-4.fna&oh=00_AT80tuEa1cbgRTaf2nL-QEgW275J0AiyuWZxiYu6jvz3wQ&oe=62C03CA4");
+        students.add(mina1);
+        students.add(mina2);
+        students.add(mina3);
+        students.add(mina4);
     }
 
     public static User findUserByEmail(String email, int Role) {
@@ -36,6 +43,37 @@ public class ApplicationClass extends Application {
             }
         }
         return user;
+    }
+
+    public static Student findStudentByName(String Name) {
+        Student student = new Student();
+        for (Student s : students) {
+            if (Name.equals(s.getName())) {
+                student = s;
+                break;
+            }
+        }
+        return student;
+    }
+
+    public static Boolean ifExists(String Name) {
+        boolean Exist = false;
+        for (Student s : students) {
+            if (Name.equals(s.getName())) {
+                Exist = true;
+                break;
+            }
+        }
+        return Exist;
+    }
+
+    public static void DeleteStudent(String Name) {
+        if (ifExists(Name)) {
+            students.remove(findStudentByName(Name));
+            TeacherProfile.recyclerView.getAdapter().notifyDataSetChanged();
+
+        } else
+            return;
     }
 
     public static boolean verify(String email, String password, int Role) {
@@ -61,4 +99,5 @@ public class ApplicationClass extends Application {
         }
         return Verified;
     }
+
 }

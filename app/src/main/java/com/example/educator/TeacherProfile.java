@@ -1,16 +1,23 @@
 package com.example.educator;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -22,6 +29,7 @@ public class TeacherProfile extends AppCompatActivity {
     TextView tv_name;
     ImageView img;
     FloatingActionButton btn_add;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,19 +53,32 @@ public class TeacherProfile extends AppCompatActivity {
         tv_name.setText(Name);
         Glide.with(this).asBitmap().load(URL).into(img);
 
-
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent(TeacherProfile.this, SignUpActivity.class);
                 startActivity(intent);
-
             }
         });
     }
 
-    public void notifyData() {
 
+    public void showDeleteDialog(View itemView) {
+
+        Button delete;
+        Dialog dialog = new Dialog(itemView.getContext());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(true);
+        dialog.setContentView(R.layout.delete_dialog);
+        delete = (Button) findViewById(R.id.ButtonForDelete);
+
+        dialog.show();
+
+    }
+
+
+    public void notifyData() {
         adapter.notifyDataSetChanged();
     }
 }

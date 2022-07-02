@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/educAtoR/app/src/main/res/drawable-anydpi/Delete.xml" value="0.2345" />
         <entry key="..\:/Android/educAtoR/app/src/main/res/drawable/bg_btn.xml" value="0.1735" />
         <entry key="..\:/Android/educAtoR/app/src/main/res/drawable/edit_text_white.xml" value="0.1735" />
         <entry key="..\:/Android/educAtoR/app/src/main/res/drawable/grey_button_background.xml" value="0.1735" />
@@ -18,8 +19,9 @@
         <entry key="..\:/Android/educAtoR/app/src/main/res/layout/activity_sign_up.xml" value="0.1625" />
         <entry key="..\:/Android/educAtoR/app/src/main/res/layout/activity_teacher_profile.xml" value="0.15138888888888888" />
         <entry key="..\:/Android/educAtoR/app/src/main/res/layout/chem_ar.xml" value="0.16418918918918918" />
+        <entry key="..\:/Android/educAtoR/app/src/main/res/layout/delete_dialog.xml" value="0.264" />
         <entry key="..\:/Android/educAtoR/app/src/main/res/layout/layout_land.xml" value="0.16418918918918918" />
-        <entry key="..\:/Android/educAtoR/app/src/main/res/layout/student_card_view.xml" value="0.16486486486486487" />
+        <entry key="..\:/Android/educAtoR/app/src/main/res/layout/student_card_view.xml" value="0.264" />
       </map>
     </option>
   </component>
