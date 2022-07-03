@@ -48,10 +48,11 @@ public class TeacherProfile extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        String URL = getIntent().getStringExtra("URL");
-        String Name = getIntent().getStringExtra("name");
-        tv_name.setText(Name);
-        Glide.with(this).asBitmap().load(URL).into(img);
+        String Email = getIntent().getStringExtra("Email");
+        User u = ApplicationClass.findUserByEmail(Email, 0);
+
+        tv_name.setText(u.getName());
+        Glide.with(this).asBitmap().load(u.getImageURL()).into(img);
 
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
