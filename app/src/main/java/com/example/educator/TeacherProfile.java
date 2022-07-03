@@ -63,21 +63,6 @@ public class TeacherProfile extends AppCompatActivity {
         });
     }
 
-
-    public void showDeleteDialog(View itemView) {
-
-        Button delete;
-        Dialog dialog = new Dialog(itemView.getContext());
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setCancelable(true);
-        dialog.setContentView(R.layout.delete_dialog);
-        delete = (Button) findViewById(R.id.ButtonForDelete);
-
-        dialog.show();
-
-    }
-
-
     public void notifyData() {
         adapter.notifyDataSetChanged();
     }

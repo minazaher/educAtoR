@@ -18,10 +18,9 @@ public class chem_AR extends AppCompatActivity {
 
         webview = findViewById(R.id.web_view);
         webview.setWebViewClient(new WebViewClient());
-        webview.loadUrl("https://aboelmagd01.github.io/educator-v1/");
+        webview.loadUrl("https://www.google.com");
         WebSettings webSettings = webview.getSettings();
         webSettings.setJavaScriptEnabled(true);
-
     }
 
     @Override
@@ -31,7 +30,7 @@ public class chem_AR extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
-
-
     }
+
+
 }

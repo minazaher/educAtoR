@@ -44,15 +44,12 @@ public class loginActivity extends AppCompatActivity {
                 String Password = et_pass_log.getText().toString();
                 if (ApplicationClass.verify(Email, Password, Role)) {
                     User user = ApplicationClass.findUserByEmail(Email, Role);
-                    String name = user.getName();
-                    String ImageURL = user.getImageURL();
                     if (Role == 0) {
                         intent = StudentIntent;
                     } else if (Role == 1) {
                         intent = TeacherIntent;
                     }
-                    intent.putExtra("name", name);
-                    intent.putExtra("URL", ImageURL);
+                    intent.putExtra("Email", Email);
                     startActivity(intent);
                 } else {
                     Toast.makeText(loginActivity.this, "Check Your Info Again", Toast.LENGTH_SHORT).show();
