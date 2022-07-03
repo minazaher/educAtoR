@@ -49,7 +49,7 @@ public class TeacherProfile extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         String Email = getIntent().getStringExtra("Email");
-        User u = ApplicationClass.findUserByEmail(Email, 0);
+        User u = ApplicationClass.findUserByEmail(Email, 1);
 
         tv_name.setText(u.getName());
         Glide.with(this).asBitmap().load(u.getImageURL()).into(img);
